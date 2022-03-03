@@ -11,7 +11,23 @@
     // };
 
 //calculer une moyenne 
-$notes = [ 13, 6, 19];
-$moyenne = round(array_sum($notes)/count($notes));
+    // $notes = [ 13, 6, 19];
+    // $moyenne = round(array_sum($notes)/count($notes));
 
-echo $moyenne;
+    // echo $moyenne;
+
+// filtre de modération 
+
+$blacklists = ['merde', 'con', 'débile', 'salaud'];
+
+$phraseUser = readline('Entrez votre message:');
+
+
+foreach ($blacklists as $value) {
+    $censure = str_repeat('*',strlen($value));
+    $phraseUser = str_replace($value, $censure, $phraseUser);
+};
+
+echo $phraseUser;
+
+
